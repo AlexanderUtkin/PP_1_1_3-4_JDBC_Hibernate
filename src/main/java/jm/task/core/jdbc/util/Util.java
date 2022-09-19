@@ -16,10 +16,9 @@ public class Util {
     public static Connection getConnection(){
         Connection connection = null;
         try {
-            Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL, ROOT, PASSWORD);
             System.out.println("Соединен с БД");
-        }catch (ClassNotFoundException | SQLException e){
+        }catch (SQLException e){
             e.printStackTrace();
             System.out.println("Ошибка соединения");
         }
